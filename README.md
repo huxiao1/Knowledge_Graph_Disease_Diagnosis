@@ -1,5 +1,3 @@
-# README
-
 ## Overview
 
 This project identifies potential diseases based on patient symptoms using AI and graph-based methods:
