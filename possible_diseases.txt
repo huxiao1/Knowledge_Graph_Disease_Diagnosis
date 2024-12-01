@@ -1,0 +1,92 @@
+stomach flu	0.642
+gastroparesis	0.662
+appendicitis	0.914
+pancreatitis	1.115
+migraine	1.152
+ovarian cyst	1.194
+endometriosis	1.248
+gastritis	1.259
+gallstones	1.269
+crohn's disease	1.287
+kidney infection	1.359
+irritable bowel syndrome	1.374
+celiac disease	1.461
+kidney stone	1.461
+ulcerative colitis	1.478
+cholecystitis	1.492
+diverticulitis	1.496
+cholangiocarcinoma	1.661
+colon cancer	1.720
+ovarian cancer	1.726
+polycystic ovary syndrome	1.732
+concussion	1.737
+hepatitis a	1.790
+meningitis	1.852
+chlamydia	1.884
+tension headache	1.904
+hiatal hernia	1.938
+acid reflux	1.966
+esophageal cancer	1.981
+cervical cancer	2.048
+liver cancer	2.056
+fibroids	2.079
+stomach ulcer	2.129
+fibromyalgia	2.244
+ectopic pregnancy	2.263
+heart attack	2.263
+myasthenia gravis	2.263
+mono	2.313
+thyroid cancer	2.333
+endometrial cancer	2.343
+lyme disease	2.408
+diverticulosis	2.477
+drug withdrawal	2.489
+strep throat	2.526
+sinusitis	2.538
+angina	2.590
+cirrhosis of the liver	2.631
+breast cancer	2.718
+alcohol intoxication	2.749
+hyponatremia	2.781
+neutropenia	2.813
+obesity	2.813
+chronic pain	2.937
+epididymitis	2.937
+lupus	2.937
+groin hernia	2.957
+traumatic brain injury	3.037
+aneurysm	3.079
+melanoma	3.101
+acute renal failure	3.124
+anaphylaxis	3.124
+type 1 diabetes	3.147
+vitamin d deficiency	3.170
+brain tumor	3.297
+hepatitis c	3.297
+miscarriage	3.297
+hypothyroidism	3.324
+thyroid nodules	3.324
+hiv/aids	3.442
+goiter	3.474
+hyperthyroidism	3.474
+hepatitis b	3.612
+high cholesterol	3.612
+anemia	3.730
+iron deficiency anemia	3.817
+lung cancer	3.817
+chronic kidney disease	3.963
+hives	3.963
+bell's palsy	4.017
+common cold	4.017
+psoriasis	4.017
+sickle cell anemia	4.200
+urinary tract infection	4.200
+abscess	4.343
+chicken pox	4.343
+cataracts	4.605
+stroke	4.605
+sepsis	4.711
+alcoholism	4.828
+parkinson's disease	4.828
+multiple sclerosis	5.298
+dementia	5.809
