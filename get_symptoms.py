@@ -33,28 +33,30 @@ Output Format:
     difficulty swallowing
 '''
 
-import openai
 import os
+# set the number of threads to 1 for better performance cuz purdue server sucks!
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+os.environ["OMP_NUM_THREADS"] = "1"
+import openai
 import argparse
 import sys
 
 def extract_symptoms(patient_description, api_key):
     openai.api_key = api_key
 
-    # Prompt for ChatGPT
-    prompt = f"""
-    You are an experienced medical assistant. Based on the patient's description provided below, extract the key symptoms that the patient is experiencing. Please list the symptoms as a comma-separated list in English.
-
-    Patient Description:
-    {patient_description}
-
-    Extracted Symptoms:
-    """
-
     try:
-        response = openai.Completion.create(
-            engine='text-davinci-003',
-            prompt=prompt,
+        response = openai.ChatCompletion.create(
+            model="gpt-4o",  # Ensure this is the correct model ID for your chat model
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are an experienced medical assistant. List the key symptoms the patient is experiencing based on the description below."
+                },
+                {
+                    "role": "user",
+                    "content": f"Patient Description:\n{patient_description}"
+                }
+            ],
             max_tokens=150,
             temperature=0.3,
             n=1,
@@ -62,8 +64,16 @@ def extract_symptoms(patient_description, api_key):
         )
 
         # Extract the symptoms from the response
-        symptoms_text = response.choices[0].text.strip()
-        symptoms_list = [symptom.strip().lower() for symptom in symptoms_text.split(',') if symptom.strip()]
+        symptoms_text = response['choices'][0]['message']['content'].strip()
+
+        # Parse the formatted response to extract just the symptoms
+        symptoms_list = []
+        for line in symptoms_text.split('\n'):
+            line = line.strip()
+            if line and line[0].isdigit():  # Checks if the line starts with a digit (e.g., "1.")
+                # Splits the line at the first period and takes the part after the space, assuming the format "1. Symptom"
+                symptom = line.split('. ', 1)[1].strip().lower()
+                symptoms_list.append(symptom)
 
         return symptoms_list
 

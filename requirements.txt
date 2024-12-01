@@ -1,4 +1,4 @@
 networkx
-openai
+openai==0.28
 matplotlib
 pyvis
