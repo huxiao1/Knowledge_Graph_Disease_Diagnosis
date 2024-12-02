@@ -49,10 +49,8 @@ Output:
     ```
 
 Notes:
-    - **API Key Security:** Avoid hardcoding your API key in the script. Instead, consider using environment variables or secure storage mechanisms.
     - **Performance Considerations:** Processing a large number of patient cases may be time-consuming, especially if external scripts are slow. Optimize external scripts for better performance if necessary.
     - **Extensibility:** The knowledge graph used by the diagnosis script can be expanded to improve accuracy over time.
-    - **Error Handling:** The script includes basic error handling for missing output files. Further enhancements can be made to handle other potential issues.
 '''
 
 import os

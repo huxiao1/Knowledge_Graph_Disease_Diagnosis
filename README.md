@@ -74,8 +74,10 @@ There are two options for extracting symptoms:
 
     Prompt We Used to Get the Patient Description:
     ```
-    You are an experienced medical assistant. Based on the patient's description provided below, extract the key symptoms that the patient is experiencing. Please list the symptoms as a comma-separated list in English.
-
+    "You are an experienced medical assistant. Your task is to identify and output the key symptoms mentioned in the patient's description. "
+    Output only a concise comma-separated list of symptoms, such as if the description is 'The patient is experiencing severe abdominal pain, nausea, and vomiting. They also report occasional heartburn and difficulty swallowing.' Then the symptoms we get are 'severe abdominal pain, nausea, vomiting, heartburn, difficulty swallowing'.
+    Do not include extra information or explanations or part name.
+    
     Patient Description:
     The patient is experiencing severe abdominal pain, nausea, and vomiting. 
     They also report occasional heartburn and difficulty swallowing.
