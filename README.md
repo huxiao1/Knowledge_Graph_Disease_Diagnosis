@@ -194,7 +194,8 @@ python3 kaggle_test.py YOUR_API_KEY LINE_THRESHOLD
 - **Extensibility:** The knowledge graph used by the diagnosis script can be expanded to improve accuracy over time.
 
 ## References
-[HealthKnowledgeGraph](https://github.com/clinicalml/HealthKnowledgeGraph/tree/master) 
+[HealthKnowledgeGraph](https://github.com/clinicalml/HealthKnowledgeGraph/tree/master)
+
 [Kaggle: Symptom2Disease](https://www.kaggle.com/datasets/niyarrbarman/symptom2disease?resource=download)
 
 ## Notes
