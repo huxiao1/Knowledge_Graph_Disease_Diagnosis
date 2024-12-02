@@ -46,11 +46,15 @@ def extract_symptoms(patient_description, api_key):
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-4o",  # Ensure this is the correct model ID for your chat model
+            model="gpt-4",  # 确保使用正确的模型名称
             messages=[
                 {
                     "role": "system",
-                    "content": "You are an experienced medical assistant. List the key symptoms the patient is experiencing based on the description below."
+                    "content": (
+                        "You are an experienced medical assistant. Your task is to identify and output the key symptoms mentioned in the patient's description. "
+                        "Output only a concise comma-separated list of symptoms, such as if the description is 'The patient is experiencing severe abdominal pain, nausea, and vomiting. They also report occasional heartburn and difficulty swallowing.' Then the symptoms we get are 'severe abdominal pain, nausea, vomiting, heartburn, difficulty swallowing'. "
+                    "Do not include extra information or explanations or part name."
+                    )
                 },
                 {
                     "role": "user",
@@ -63,17 +67,26 @@ def extract_symptoms(patient_description, api_key):
             stop=None,
         )
 
-        # Extract the symptoms from the response
+        #print(f"ChatGPT Response: {response}")
+
+        # 提取症状文本
         symptoms_text = response['choices'][0]['message']['content'].strip()
 
-        # Parse the formatted response to extract just the symptoms
-        symptoms_list = []
-        for line in symptoms_text.split('\n'):
-            line = line.strip()
-            if line and line[0].isdigit():  # Checks if the line starts with a digit (e.g., "1.")
-                # Splits the line at the first period and takes the part after the space, assuming the format "1. Symptom"
-                symptom = line.split('. ', 1)[1].strip().lower()
-                symptoms_list.append(symptom)
+        # 检查是否为逗号分隔的列表
+        if ',' in symptoms_text:
+            # 按逗号分割并清理每个症状
+            symptoms_list = [symptom.strip().lower() for symptom in symptoms_text.split(',') if symptom.strip()]
+        else:
+            # 处理编号列表的情况
+            symptoms_list = []
+            for line in symptoms_text.split('\n'):
+                line = line.strip()
+                if line and line[0].isdigit():  # 检查行是否以数字开头
+                    # 分割编号和症状
+                    parts = line.split('.', 1)
+                    if len(parts) == 2:
+                        symptom = parts[1].strip().lower()
+                        symptoms_list.append(symptom)
 
         return symptoms_list
 

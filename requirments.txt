@@ -2,3 +2,5 @@ networkx
 openai==0.28
 matplotlib
 pyvis
+pandas
+kagglehub

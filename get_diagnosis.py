@@ -179,9 +179,11 @@ def main():
     save_possible_diseases(sorted_diseases, args.output)
     
     # Print the possible diseases
+    '''
     print("\nPossible Diseases:")
     for disease, score in sorted_diseases:
         print(f"Disease: {disease.title()}, Score (lower is better): {score:.3f}")
-
+    '''
+    
 if __name__ == "__main__":
     main()

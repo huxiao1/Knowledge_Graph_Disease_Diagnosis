@@ -149,9 +149,53 @@ The list of diseases with their scores is also printed to the console.
 
 ---
 
+### 4. Kaggle Evaluation
+#### **Description**
+Evaluate Medical Diagnosis Accuracy Using Symptom-Disease Dataset
+
+#### **Usage**
+```bash
+python3 kaggle_test.py YOUR_API_KEY LINE_THRESHOLD
+```
+
+#### **Input Format**
+[Kaggle: Symptom2Disease](https://www.kaggle.com/datasets/niyarrbarman/symptom2disease?resource=download)
+
+#### **Output Format**
+```
+    -----------------Diagnose Start-----------------
+
+    Extracted Symptoms: ['skin rash', 'itchiness', 'dry scaly patches']
+    Symptoms have been saved to symptoms.txt
+    Loading knowledge graph...
+    Knowledge graph loaded.
+    Loading symptoms...
+    Loaded Symptoms: ['skin rash', 'itchiness', 'dry scaly patches']
+    Warning: The following symptoms are not present in the knowledge graph and will be ignored: ['itchiness', 'dry scaly patches']
+    Performing A* search to identify possible diseases...
+    Possible diseases have been saved to possible_diseases.txt
+    Disease Ground Truth: Psoriasis
+    Loading: --------------
+    Diagnose complete!
+    Predicted Disease is: psoriasis 2.882
+    -----------------Diagnose End-----------------
+
+    ---------Diagnosis Statistics---------
+    Disease: Psoriasis
+    Correct Predictions: 1
+    Incorrect Predictions: 0
+    Accuracy: 100.00%
+    --------------------------------------
+```
+
+#### **Notes**
+- **API Key Security:** Avoid hardcoding your API key in the script. Instead, consider using environment variables or secure storage mechanisms.
+- **Performance Considerations:** Processing a large number of patient cases may be time-consuming, especially if external scripts are slow. Optimize external scripts for better performance if necessary.
+- **Extensibility:** The knowledge graph used by the diagnosis script can be expanded to improve accuracy over time.
+
 ## References
 [HealthKnowledgeGraph](https://github.com/clinicalml/HealthKnowledgeGraph/tree/master) 
-
+[Kaggle: Symptom2Disease](https://www.kaggle.com/datasets/niyarrbarman/symptom2disease?resource=download)
 
 ## Notes
 

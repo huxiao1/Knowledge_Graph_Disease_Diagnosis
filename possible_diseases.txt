@@ -1,0 +1,26 @@
+chicken pox	0.755
+hives	1.097
+bed bug bite	1.112
+shingles	1.201
+atopic dermatitis	1.461
+insect bites and stings	1.645
+lyme disease	1.814
+anaphylaxis	2.631
+psoriasis	2.882
+meningitis	3.147
+cellulitis	3.170
+mono	3.352
+burn	3.576
+pink eye	3.576
+hiv/aids	3.817
+lupus	3.863
+strep throat	3.863
+encephalitis	3.912
+seasonal allergies	3.963
+sinusitis	3.963
+hepatitis a	4.017
+ovarian cancer	4.200
+rheumatoid arthritis	4.510
+lung cancer	4.711
+sleep apnea	4.828
+common cold	5.521
